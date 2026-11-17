@@ -3,3 +3,5 @@
 *.xcodeproj/xcuserdata/
 DerivedData/
 .amp/portals/*
+*.xcodeproj/
+App/Info.plist

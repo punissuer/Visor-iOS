@@ -1,0 +1,36 @@
+name: Visor
+options:
+  bundleIdPrefix: com.punissuer
+  deploymentTarget: { iOS: "16.0" }
+packages:
+  Visor:
+    path: .
+targets:
+  Visor:
+    type: application
+    platform: iOS
+    sources: [App]
+    dependencies:
+      - package: Visor
+        product: VisorProtocol
+      - package: Visor
+        product: VisorSession
+      - package: Visor
+        product: VisorIdentity
+      - package: Visor
+        product: VisorTransport
+    info:
+      path: App/Info.plist
+      properties:
+        CFBundleDisplayName: Visor
+        UILaunchScreen: {}
+        NSBluetoothAlwaysUsageDescription: Visor talks to your Meta glasses over Bluetooth.
+        UIBackgroundModes: [bluetooth-central]
+        ITSAppUsesNonExemptEncryption: false
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.punissuer.visor
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "5.9"
+        GENERATE_INFOPLIST_FILE: NO
